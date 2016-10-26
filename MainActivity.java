@@ -1,6 +1,7 @@
 package com.example.dialog;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -34,6 +35,15 @@ public class MainActivity extends Activity {
        
        List<Map<String,Object>>listItems=new ArrayList<Map<String,Object>>();
        //创建一个List集合，集合元素是Map
+       for(int i=0;i<names.length;i++){
+    	   Map<String,Object>map=new HashMap<String,Object>();
+    	   //创建一个Map对象，存放每一项数据
+    	   map.put("img", imageids[i]);
+    	   map.put("title", names[i]);
+    	   //讲头像和昵称都放入Map对象中
+    	   map.put("info", info[i]);
+    	   listItems.add(map);
+       }
        
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
